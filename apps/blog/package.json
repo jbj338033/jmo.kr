@@ -1,0 +1,30 @@
+{
+  "name": "@jmo/blog",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "next": "^16.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "@next/mdx": "^16.0.0",
+    "@mdx-js/loader": "^3.1.0",
+    "@mdx-js/react": "^3.1.0"
+  },
+  "devDependencies": {
+    "@jmo/eslint-config": "workspace:*",
+    "@jmo/tailwind-config": "workspace:*",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@types/mdx": "^2.0.0",
+    "typescript": "^5.7.0",
+    "eslint": "^9.17.0"
+  }
+}

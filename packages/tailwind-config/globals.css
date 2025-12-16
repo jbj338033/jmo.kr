@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Pretendard Variable", "Pretendard", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, "Fira Code", monospace;
+
+  --color-primary: oklch(0.65 0.2 250);
+  --color-secondary: oklch(0.55 0.15 300);
+  --color-accent: oklch(0.75 0.15 180);
+
+  --color-background: oklch(0.99 0 0);
+  --color-foreground: oklch(0.15 0 0);
+  --color-background-dark: oklch(0.1 0 0);
+  --color-foreground-dark: oklch(0.95 0 0);
+
+  --color-muted: oklch(0.96 0 0);
+  --color-muted-foreground: oklch(0.45 0 0);
+
+  --color-border: oklch(0.9 0 0);
+
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+}

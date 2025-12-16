@@ -1,12 +1,12 @@
 export const siteConfig = {
-  name: "Blog",
+  name: "jmo's blog",
   description: "Personal blog",
   url: "https://blog.example.com",
   author: {
-    name: "JMO",
+    name: "jmo",
     email: "jmo@example.com",
   },
   links: {
-    github: "https://github.com/jmo",
+    github: "https://github.com/jbj338033",
   },
 } as const;

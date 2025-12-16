@@ -7,14 +7,22 @@ export function Footer() {
       <Container>
         <div className="flex items-center justify-between text-sm text-muted-foreground">
           <p>jmo</p>
-          <Link
-            href="https://github.com/jbj338033"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-foreground transition-colors"
-          >
-            github
-          </Link>
+          <div className="flex gap-4">
+            <Link
+              href="mailto:minodevs@gmail.com"
+              className="hover:text-foreground transition-colors"
+            >
+              email
+            </Link>
+            <Link
+              href="https://github.com/jbj338033"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-foreground transition-colors"
+            >
+              github
+            </Link>
+          </div>
         </div>
       </Container>
     </footer>

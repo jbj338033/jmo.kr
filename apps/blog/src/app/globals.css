@@ -1,1 +1,4 @@
+@import "tailwindcss";
 @import "@jmo/tailwind-config/globals.css";
+
+@plugin "@tailwindcss/typography";

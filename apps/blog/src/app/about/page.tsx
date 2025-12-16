@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Container, Prose } from "@/shared/ui";
+import Link from "next/link";
+import { Container } from "@/shared/ui";
 import { siteConfig } from "@/shared/config";
 
 export const metadata: Metadata = {
@@ -10,26 +11,30 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <Container>
-      <Prose>
-        <h1>About</h1>
+      <div className="space-y-6 text-[15px] leading-relaxed">
         <p>
           안녕하세요, {siteConfig.author.name}입니다.
         </p>
         <p>
-          이 블로그는 개발하면서 배운 것들과 생각을 기록하는 공간입니다.
+          개발하면서 배운 것들과 생각을 기록하는 공간입니다.
         </p>
-        <h2>Contact</h2>
-        <ul>
-          <li>
-            <a href={`mailto:${siteConfig.author.email}`}>Email</a>
-          </li>
-          <li>
-            <a href={siteConfig.links.github} target="_blank" rel="noopener noreferrer">
-              GitHub
-            </a>
-          </li>
-        </ul>
-      </Prose>
+        <div className="pt-4 flex gap-6 text-sm">
+          <Link
+            href={`mailto:${siteConfig.author.email}`}
+            className="text-muted-foreground hover:text-foreground transition-colors"
+          >
+            email
+          </Link>
+          <Link
+            href={siteConfig.links.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted-foreground hover:text-foreground transition-colors"
+          >
+            github
+          </Link>
+        </div>
+      </div>
     </Container>
   );
 }

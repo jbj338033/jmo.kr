@@ -1,25 +1,21 @@
 import Link from "next/link";
 import { Container } from "@/shared/ui";
 import { ThemeToggle } from "@/features/theme";
-import { siteConfig } from "@/shared/config";
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border">
+    <header className="pt-8 pb-16">
       <Container>
-        <nav className="flex items-center justify-between h-14">
-          <Link
-            href="/"
-            className="font-semibold text-lg hover:text-primary transition-colors"
-          >
-            {siteConfig.name}
+        <nav className="flex items-center justify-between">
+          <Link href="/" className="font-medium hover:opacity-60 transition-opacity">
+            jmo
           </Link>
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-6">
             <Link
               href="/about"
-              className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
-              About
+              about
             </Link>
             <ThemeToggle />
           </div>

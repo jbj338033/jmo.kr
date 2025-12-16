@@ -32,10 +32,10 @@ export default function RootLayout({
       <head>
         <ThemeScript />
       </head>
-      <body className="min-h-screen flex flex-col bg-background text-foreground font-sans antialiased">
+      <body className="min-h-screen flex flex-col bg-background text-foreground font-sans antialiased selection:bg-foreground/10">
         <ThemeProvider>
           <Header />
-          <main className="flex-1 py-12">{children}</main>
+          <main className="flex-1">{children}</main>
           <Footer />
         </ThemeProvider>
       </body>

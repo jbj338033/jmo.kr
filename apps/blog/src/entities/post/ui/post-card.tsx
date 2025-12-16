@@ -1,26 +1,28 @@
 import Link from "next/link";
 import type { Post } from "../model";
-import { formatDate } from "@/shared/lib";
 
 interface PostCardProps {
   post: Post;
 }
 
+function formatShortDate(date: string): string {
+  const d = new Date(date);
+  return `${d.getFullYear()}.${String(d.getMonth() + 1).padStart(2, "0")}.${String(d.getDate()).padStart(2, "0")}`;
+}
+
 export function PostCard({ post }: PostCardProps) {
   return (
-    <article className="group">
-      <Link href={`/posts/${post.slug}`} className="block py-6">
-        <div className="flex flex-col gap-1">
-          <h2 className="text-lg font-medium group-hover:text-primary transition-colors">
-            {post.meta.title}
-          </h2>
-          <p className="text-muted-foreground text-sm line-clamp-2">
-            {post.meta.description}
-          </p>
-          <time className="text-muted-foreground text-xs mt-2">
-            {formatDate(post.meta.date)}
-          </time>
-        </div>
+    <article>
+      <Link
+        href={`/posts/${post.slug}`}
+        className="group flex items-baseline justify-between gap-4 py-3 -mx-3 px-3 rounded-lg hover:bg-muted/50 transition-colors"
+      >
+        <h2 className="font-medium group-hover:text-primary transition-colors truncate">
+          {post.meta.title}
+        </h2>
+        <time className="text-sm text-muted-foreground tabular-nums shrink-0">
+          {formatShortDate(post.meta.date)}
+        </time>
       </Link>
     </article>
   );

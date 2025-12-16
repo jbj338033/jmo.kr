@@ -4,7 +4,7 @@ import type { Post, PostMeta } from "./types";
 
 const CONTENT_DIR = path.join(process.cwd(), "src/content");
 
-export async function getPosts(): Promise<Post[]> {
+export async function getPosts(category?: string): Promise<Post[]> {
   const files = fs.readdirSync(CONTENT_DIR).filter((f) => f.endsWith(".mdx"));
 
   const posts = await Promise.all(
@@ -19,9 +19,23 @@ export async function getPosts(): Promise<Post[]> {
     })
   );
 
-  return posts.sort(
+  const sorted = posts.sort(
     (a, b) => new Date(b.meta.date).getTime() - new Date(a.meta.date).getTime()
   );
+
+  if (category) {
+    return sorted.filter((p) => p.meta.category === category);
+  }
+
+  return sorted;
+}
+
+export async function getCategories(): Promise<string[]> {
+  const posts = await getPosts();
+  const categories = new Set(
+    posts.map((p) => p.meta.category).filter((c): c is string => !!c)
+  );
+  return Array.from(categories).sort();
 }
 
 export async function getPost(slug: string): Promise<Post | null> {

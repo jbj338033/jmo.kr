@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Container, Prose } from "@/shared/ui";
-import { getPost, getPosts, PostHeader } from "@/entities/post";
+import { getPost, getPosts, getAdjacentPosts, PostHeader, PostNav } from "@/entities/post";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -25,7 +25,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function PostPage({ params }: PageProps) {
   const { slug } = await params;
-  const post = await getPost(slug);
+  const [post, { prev, next }] = await Promise.all([
+    getPost(slug),
+    getAdjacentPosts(slug),
+  ]);
 
   if (!post) notFound();
 
@@ -39,6 +42,7 @@ export default async function PostPage({ params }: PageProps) {
           <Content />
         </Prose>
       </article>
+      <PostNav prev={prev} next={next} />
     </Container>
   );
 }

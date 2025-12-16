@@ -36,3 +36,13 @@ export async function getPost(slug: string): Promise<Post | null> {
     return null;
   }
 }
+
+export async function getAdjacentPosts(slug: string) {
+  const posts = await getPosts();
+  const index = posts.findIndex((p) => p.slug === slug);
+
+  return {
+    prev: index < posts.length - 1 ? posts[index + 1] : null,
+    next: index > 0 ? posts[index - 1] : null,
+  };
+}

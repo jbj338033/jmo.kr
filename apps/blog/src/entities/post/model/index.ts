@@ -1,2 +1,2 @@
 export type { Post, PostMeta } from "./types";
-export { getPosts, getPost } from "./get-posts";
+export { getPosts, getPost, getAdjacentPosts } from "./get-posts";

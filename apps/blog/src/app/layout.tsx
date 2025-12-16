@@ -3,7 +3,6 @@ import localFont from "next/font/local";
 import { ThemeProvider, ThemeScript } from "@/features/theme";
 import { Header } from "@/widgets/header";
 import { Footer } from "@/widgets/footer";
-import { siteConfig } from "@/shared/config";
 import "./globals.css";
 
 const pretendard = localFont({
@@ -15,11 +14,11 @@ const pretendard = localFont({
 
 export const metadata: Metadata = {
   title: {
-    default: siteConfig.name,
-    template: `%s | ${siteConfig.name}`,
+    default: "jmo's blog",
+    template: "%s | jmo's blog",
   },
-  description: siteConfig.description,
-  authors: [{ name: siteConfig.author.name }],
+  description: "Personal blog",
+  authors: [{ name: "jmo" }],
 };
 
 export default function RootLayout({

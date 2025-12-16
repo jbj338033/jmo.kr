@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { Container } from "@/shared/ui";
 import { ThemeToggle } from "@/features/theme";
-import { siteConfig } from "@/shared/config";
 
 export function Header() {
   return (
@@ -9,7 +8,7 @@ export function Header() {
       <Container>
         <nav className="flex items-center justify-between">
           <Link href="/" className="font-medium hover:opacity-60 transition-opacity">
-            {siteConfig.name}
+            jmo's blog
           </Link>
           <div className="flex items-center gap-6">
             <Link

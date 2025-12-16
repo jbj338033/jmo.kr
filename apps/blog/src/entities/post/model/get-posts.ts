@@ -1,8 +1,10 @@
 import fs from "fs";
 import path from "path";
+import { fileURLToPath } from "url";
 import type { Post, PostMeta } from "./types";
 
-const CONTENT_DIR = path.join(process.cwd(), "src/content");
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const CONTENT_DIR = path.resolve(__dirname, "../../../content");
 
 export async function getPosts(category?: string): Promise<Post[]> {
   const files = fs.readdirSync(CONTENT_DIR).filter((f) => f.endsWith(".mdx"));

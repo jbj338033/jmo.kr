@@ -1,11 +1,11 @@
 ---
 name: blog-writer
-description: toss.tech 스타일로 블로그 글을 작성하거나 수정합니다. 블로그 글 작성, 수정, 다듬기, 리뷰, 퇴고 요청 시 사용합니다.
+description: 블로그 글을 작성하거나 수정합니다. 블로그 글 작성, 수정, 다듬기, 리뷰, 퇴고 요청 시 사용합니다.
 disable-model-invocation: true
 argument-hint: [주제 또는 파일명]
 ---
 
-# toss.tech 스타일 블로그 글 작성 & 수정
+# 블로그 글 작성 & 수정
 
 ## 모드 판단
 
